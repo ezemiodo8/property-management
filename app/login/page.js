@@ -46,7 +46,10 @@ export default function LoginPage() {
         <h2 className="text-xl font-semibold mb-4">
           {view === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
         </h2>
-        <form onSubmit={view === 'login' ? handleLogin : handleSignup} className="space-y-4">
+        <form
+          onSubmit={view === 'login' ? handleLogin : handleSignup}
+          className="space-y-4"
+        >
           <div>
             <label htmlFor="email" className="block text-sm text-secondary mb-1">
               Correo electrónico
@@ -76,7 +79,7 @@ export default function LoginPage() {
           {error && <p className="text-red-500 text-sm">{error}</p>}
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-accent text-white rounded-md hover:bg-red-600 transition"
+            className="w-full py-2 px-4 bg-accent text-white rounded-md shadow hover:bg-red-600 transition"
           >
             {view === 'login' ? 'Ingresar' : 'Registrarse'}
           </button>

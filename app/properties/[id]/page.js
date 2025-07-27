@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { supabase } from '../../../../lib/supabaseClient';
+import { supabase } from '../../../lib/supabaseClient';
 
 // Detail and edit page for a single property
 export default function PropertyDetailPage() {
@@ -150,15 +150,15 @@ export default function PropertyDetailPage() {
                   <td className="py-1">
                     {new Date(p.date).toLocaleDateString('es-AR')}
                   </td>
-                  <td className="py-1">
-                    {p.amount.toLocaleString('es-AR', {
-                      style: 'currency',
-                      currency: property.currency || 'ARS',
-                      maximumFractionDigits: 0,
-                    })}
-                  </td>
-                </tr>
-              ))}
+                    <td className="py-1">
+                      {p.amount.toLocaleString('es-AR', {
+                        style: 'currency',
+                        currency: property.currency || 'ARS',
+                        maximumFractionDigits: 0,
+                      })}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         )}
